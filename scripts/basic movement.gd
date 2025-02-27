@@ -23,7 +23,14 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("key_left", "key_right")
 	if direction:
 		velocity.x = direction * SPEED
+		$AnimatedSprite2D.play ("run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		$AnimatedSprite2D.play ("idle")
+		
+		
+	if direction == 1:
+		$AnimatedSprite2D.flip_h = false
+	elif direction == -1:
+		$AnimatedSprite2D.flip_h = true
 	move_and_slide()
