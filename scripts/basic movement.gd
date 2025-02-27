@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -400.0
+@export var Y_SMOOTHING = 0.8
 
 # Variables for character speed and jump count
 var speed = 250.0
 var jump_count = 0
+var prevVelocity: Vector2 = Vector2.ZERO
 
 # Variable for jump sfx
 @onready var jump_sfx: AudioStreamPlayer = $jump_sfx
@@ -17,6 +19,7 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		velocity.x = lerp(prevVelocity.x, velocity.x, 0.1)
 	else:
 		jump_count = 0
 	
@@ -25,7 +28,9 @@ func _physics_process(delta):
 		jump_count += 1
 		jump_sfx.play()
 		velocity.y = JUMP_VELOCITY
-		
+	
+	if Input.is_action_just_released("ui_accept"):
+		velocity.y *= 0.4
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("key_left", "key_right")
@@ -42,4 +47,7 @@ func _physics_process(delta):
 	elif direction == -1:
 		$AnimatedSprite2D.flip_h = true
 	move_and_slide()
+	
+	velocity.y = lerp(prevVelocity.y, velocity.y, Y_SMOOTHING)
+	prevVelocity = velocity
 	
