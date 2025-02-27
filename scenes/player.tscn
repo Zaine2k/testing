@@ -171,7 +171,7 @@ scale = Vector2(1.40625, 1.34375)
 sprite_frames = SubResource("SpriteFrames_5qbtb")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.882598
+frame_progress = 0.206581
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(1, -7)
