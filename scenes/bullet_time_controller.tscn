@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://csw2qkcwl4hpv"]
+
+[ext_resource type="Script" path="res://scripts/bullet time controller.gd" id="1_yf3gg"]
+
+[node name="BulletTimeController" type="Node"]
+script = ExtResource("1_yf3gg")

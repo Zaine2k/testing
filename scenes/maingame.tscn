@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cklrkhk2of2bu"]
+[gd_scene load_steps=10 format=3 uid="uid://cklrkhk2of2bu"]
 
 [ext_resource type="PackedScene" uid="uid://cklrkhk2of2bu" path="res://scenes/player.tscn" id="1_h7lif"]
 [ext_resource type="Texture2D" uid="uid://b7w5c1htrc8xg" path="res://assets/world_tileset.png" id="2_y5bb7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cgsel4pukkn32" path="res://assets/2.png" id="4_ugbgc"]
 [ext_resource type="Texture2D" uid="uid://dw4pupsqp6uro" path="res://assets/3.png" id="5_r26s1"]
 [ext_resource type="Texture2D" uid="uid://b7tal3frw2ay6" path="res://assets/4.png" id="6_5dscg"]
+[ext_resource type="PackedScene" uid="uid://csw2qkcwl4hpv" path="res://scenes/bullet_time_controller.tscn" id="7_efnlb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y83xi"]
 texture = ExtResource("2_y5bb7")
@@ -206,3 +207,5 @@ motion_mirroring = Vector2(576, 324)
 scale = Vector2(1, 0.992)
 texture = ExtResource("6_5dscg")
 centered = false
+
+[node name="BulletTimeController" parent="." instance=ExtResource("7_efnlb")]
