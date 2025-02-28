@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/basic movement.gd" id="1_8vyr5"]
 [ext_resource type="Texture2D" uid="uid://dg766lodmbk56" path="res://assets/knight.png" id="1_o8o8w"]
-[ext_resource type="Script" path="res://scenes/camera_2d.gd" id="3_bmlur"]
 [ext_resource type="AudioStream" uid="uid://c0yfyhfyji5d" path="res://assets/jump.wav" id="3_nq21c"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="3_wfb5q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vnvd4"]
 atlas = ExtResource("1_o8o8w")
@@ -175,10 +175,10 @@ autoplay = "idle"
 frame_progress = 0.206581
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(1, -29)
-zoom = Vector2(2, 2)
+position = Vector2(-1, -19)
+zoom = Vector2(3, 3)
 limit_top = -160
-script = ExtResource("3_bmlur")
+script = ExtResource("3_wfb5q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(2, -9)
