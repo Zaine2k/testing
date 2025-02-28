@@ -4,10 +4,13 @@ extends Node
 @export var slowmo_time_scale: float = 0.5
 @export var slowmo_duration: float = 2.0  # Slow-motion lasts for 2 seconds
 
+@onready var power_sfx: AudioStreamPlayer = $power_sfx
+
 var slowmo_active: bool = false
 
 func _input(event):
 	if event.is_action_pressed("bullet_time") and not slowmo_active:
+		power_sfx.play()
 		start_slow_motion()
 
 func start_slow_motion():

@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://csw2qkcwl4hpv"]
+[gd_scene load_steps=3 format=3 uid="uid://csw2qkcwl4hpv"]
 
 [ext_resource type="Script" path="res://scripts/bullet time controller.gd" id="1_yf3gg"]
+[ext_resource type="AudioStream" uid="uid://cjo3wfigywm3f" path="res://assets/power_up.wav" id="2_52dhl"]
 
 [node name="BulletTimeController" type="Node"]
 script = ExtResource("1_yf3gg")
+
+[node name="power_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_52dhl")
+volume_db = -1.0
