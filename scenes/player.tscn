@@ -174,8 +174,8 @@ autoplay = "idle"
 frame_progress = 0.206581
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(-1, -19)
-zoom = Vector2(3, 3)
+position = Vector2(1, -29)
+zoom = Vector2(2, 2)
 limit_top = -160
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
