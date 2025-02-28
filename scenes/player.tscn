@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://cklrkhk2of2bu"]
+[gd_scene load_steps=27 format=3 uid="uid://cklrkhk2of2bu"]
 
 [ext_resource type="Script" path="res://scripts/basic movement.gd" id="1_8vyr5"]
 [ext_resource type="Texture2D" uid="uid://dg766lodmbk56" path="res://assets/knight.png" id="1_o8o8w"]
+[ext_resource type="Script" path="res://scenes/camera_2d.gd" id="3_bmlur"]
 [ext_resource type="AudioStream" uid="uid://c0yfyhfyji5d" path="res://assets/jump.wav" id="3_nq21c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vnvd4"]
@@ -177,6 +178,7 @@ frame_progress = 0.206581
 position = Vector2(1, -29)
 zoom = Vector2(2, 2)
 limit_top = -160
+script = ExtResource("3_bmlur")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(2, -9)
